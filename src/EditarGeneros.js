@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import {Redirect} from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
-const NovoGenero = () => {
+const EditarGenero = (props) => {
+    const { match } = props
     const [form, setForm] = useState({ name: '' })
     const [success, setSuccess] = useState(false)
 
@@ -10,19 +11,25 @@ const NovoGenero = () => {
         setForm({ name: event.target.value })
     }
 
+    useEffect(() => {
+        axios.get('/api/genres/'+match.params.id).then((res) => {
+            setForm(res.data)
+        })
+    },[match.params.id])//sempre que alterado, executo esse codigo, match.params.id é a dependencia 
+
     const save = () => {
-        axios.post('/api/genres', form).then((res) => {
+        axios.put('/api/genres/'+match.params.id, form).then((res) => {
             setSuccess(true)
         })
     }
 
-    if(success){
-        return <Redirect to='/generos'/>
+    if (success) {
+        return <Redirect to='/generos' />
     }
 
     return (
         <div className='container'>
-            <h1>Novo genero</h1>
+            <h1>Editar genero</h1>
 
             <form>
                 <div className='form-group'>
@@ -35,4 +42,4 @@ const NovoGenero = () => {
     )
 }
 
-export default NovoGenero
+export default EditarGenero
