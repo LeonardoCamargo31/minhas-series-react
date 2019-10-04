@@ -37,8 +37,8 @@ const Generos = () => {
     if (data.length === 0) {
         return (
             <div className='container'>
-                <h1>Generos</h1>
-                <Link className='btn btn-primary' to='/generos/novo'>Novo genero</Link>
+                <h2>Gêneros</h2>
+                <Link className='btn btn-primary spacing-button' to='/generos/novo'>Novo gênero</Link>
                 <div class="alert alert-primary" role="alert">
                     Nenhum registro foi encontrado.
                 </div>
@@ -46,9 +46,9 @@ const Generos = () => {
         )
     } else {
         return (
-            <div className='container'>
-                <h1>Generos</h1>
-                <Link className='btn btn-primary' to='/generos/novo'>Novo genero</Link>
+            <div className='container page'>
+                <h2>Gêneros</h2>
+                <Link className='btn btn-primary spacing-button' to='/generos/novo'>Novo gênero</Link>
                 <table className='table table-striped'>
                     <thead>
                         <tr>

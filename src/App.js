@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './Header'
+import Footer from './Footer'
 import Generos from './Generos'
 import NovoGeneros from './NovoGenero'
 import EditarGeneros from './EditarGeneros'
@@ -7,6 +8,9 @@ import EditarGeneros from './EditarGeneros'
 import Series from './Series'
 import NovaSerie from './NovaSerie'
 import InfoSerie from './InfoSerie'
+
+import './style.css'
+
 //BrowserRouter => para ficar limpinho, como /series e /generos
 //Route => Que é minha rota
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
@@ -36,6 +40,7 @@ function App() {
           <Route path='/series/novo' exact component={NovaSerie}></Route>
           <Route path='/series/:id' exact component={InfoSerie}></Route>
         </Switch>
+        <Footer/>
       </div>
     </Router>
   )

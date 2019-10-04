@@ -21,9 +21,8 @@ const NovoGenero = () => {
     }
 
     return (
-        <div className='container'>
-            <h1>Novo genero</h1>
-
+        <div className='container page'>
+            <h2>Novo gênero</h2>
             <form>
                 <div className='form-group'>
                     <label for='name'>Nome</label>

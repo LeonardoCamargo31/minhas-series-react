@@ -14,7 +14,7 @@ const Header = () => {
                 {/* 'tag' para ele utilizar o componente Link, e 'to' que é o caminho desejado */}
                 {/* se usar a href, ele ira dar refresh, e isso não é um compartamento de SPA */}
                 <NavbarBrand tag={Link} to='/'>
-                    <img style={{width:'190px'}} src={logo}/>
+                    <img className='logo' src={logo}/>
                 </NavbarBrand>
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={open} navbar>
